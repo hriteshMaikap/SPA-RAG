@@ -1,13 +1,14 @@
 .chat-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
-  height: 600px;
+  justify-content: center;
+  width: 50%;
+  height: 550px;
   background-color: #1e1e1e;
   border-radius: 8px;
   padding: 20px;
   margin: 0 auto;
+  margin-top: 20px;
 }
 
 .chat-box {
@@ -53,10 +54,73 @@
 .input-box input {
   background-color: #333;
   color: white;
+  flex-grow: 1;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.input-box button {
+  background-color: #007aff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.input-box button:hover {
+  transform: translateY(-2px);
+  padding-right: 20px;
+}
+.input-box button:after {
+  content: "\00bb";
+  position: absolute;
+  right: -2px;
+  bottom: 8px;
+  opacity: 0;
+  transition: all 0.5s ease;
+  font-size: 22px;
+}
+
+.input-box button:hover:after {
+  opacity: 1;
+  right: 0;
+}
+
+.input-box button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
 }
 
 .loading {
   display: flex;
   justify-content: center;
   padding: 10px;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #007aff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+hr {
+  border: none;
+  height: 1px;
+  background-color: #444;
+  margin: 10px 0;
 }
