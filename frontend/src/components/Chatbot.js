@@ -15,7 +15,6 @@ function Chatbot() {
     setInput('');
     setLoading(true);
 
-    // Send user input to the Flask backend
     try {
       const response = await fetch('http://localhost:5000/generate', {
         method: 'POST',

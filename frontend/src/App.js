@@ -7,19 +7,19 @@ function App() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <AppBar position="static">
+      <AppBar position="static" className="app-bar">
         <Toolbar>
           <img
             src={`${process.env.PUBLIC_URL}/ieee-logo.png`}
             alt="IEEE Logo"
-            style={{ height: 50, marginRight: '20px' }}
+            className="logo"
           />
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             IEEE FAQ Chatbot
           </Typography>
         </Toolbar>
       </AppBar>
-      <Container maxWidth="sm">
+      <Container maxWidth="md">
         <Box mt={5}>
           <Chatbot />
         </Box>
