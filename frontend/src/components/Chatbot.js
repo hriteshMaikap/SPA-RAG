@@ -53,7 +53,9 @@ function Chatbot() {
     <div className="chat-container">
       <div className="chat-box">
         {messages.length === 0 && !loading ? (
-          <Lottie options={defaultOptions} height={400} width={400} />
+          <div className="lottie-container">
+            <Lottie options={defaultOptions} />
+          </div>
         ) : (
           messages.map((msg, idx) => (
             <div key={idx} className={`message ${msg.sender}`}>

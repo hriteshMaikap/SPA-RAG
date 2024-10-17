@@ -8,16 +8,19 @@ body {
 }
 
 .header {
+  /* padding: 5px; */
   display: flex;
   gap: 1em;
   justify-content: center;
+  align-items: center;
   background: #0f4c81;
 }
 .logo {
-  padding: 10px;
-  width: 100px;
-  height: 70px;
-  border-radius: 15px;
+  margin: 25px;
+  /* padding: 20px; */
+  width: 10em;
+  height: 5em;
+  border-radius: 10px;
 }
 .app-title {
   color: white;
@@ -25,4 +28,38 @@ body {
 
 .chatbot-container {
   margin: 0 auto;
+}
+
+.welcome-text {
+  font-size: 72px;
+  background: linear-gradient(95deg, white, black, grey, white);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-family: "Ubuntu Mono", monospace;
+  background-size: 400% 100%;
+  animation: gradient 10s ease-in-out infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .welcome-text {
+    font-size: 32px;
+  }
+  .logo {
+    width: 8em;
+    height: 4em;
+  }
 }
