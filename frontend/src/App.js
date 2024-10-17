@@ -1,30 +1,31 @@
-import React from 'react';
-import { Container, CssBaseline, AppBar, Toolbar, Typography, Box } from '@mui/material';
-import Chatbot from './components/Chatbot';
-import './App.css';
+import React from "react";
+import Chatbot from "./components/Chatbot";
+import "./App.css";
+import { TypeAnimation } from "react-type-animation";
+import ieeeLogo from "./assets/ieeeLogo.jpg";
 
 function App() {
   return (
-    <React.Fragment>
-      <CssBaseline />
-      <AppBar position="static" className="app-bar">
-        <Toolbar>
-          <img
-            src={`${process.env.PUBLIC_URL}/ieee-logo.png`}
-            alt="IEEE Logo"
-            className="logo"
-          />
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            IEEE FAQ Chatbot
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <Container maxWidth="md">
-        <Box mt={5}>
-          <Chatbot />
-        </Box>
-      </Container>
-    </React.Fragment>
+    <div className="app-container">
+      <div className="header">
+        <img src={ieeeLogo} alt="IEEE Logo" className="logo" />
+        <TypeAnimation
+          className="welcome-text"
+          sequence={["IEEE Chatbot", 1000]}
+          wrapper="span"
+          speed={50}
+          style={{
+            fontWeight: "bold",
+            display: "inline-block",
+          }}
+          cursor={false}
+          repeat={Infinity}
+        />
+      </div>
+      <div className="chatbot-container">
+        <Chatbot />
+      </div>
+    </div>
   );
 }
 
